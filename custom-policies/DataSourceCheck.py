@@ -11,15 +11,15 @@ class DataSourceCheck(BaseDataCheck):
         categories = [CheckCategories.APPLICATION_SECURITY]
         super().__init__(name=name, id=id, categories=categories, supported_data=supported_data)
 
-    def scan_data_conf(self, conf: Dict[str, List[Any]], entity_type: str) -> CheckResult:
+    def scan_data_conf(self, conf: Dict[str, List[Any]]) -> CheckResult:
         """ 
         Validates if source code contains forbidden data sources
         :param conf: The terraform configuration
         :param entity_type: The entity type of data source
         :return: <CheckResult>
         """
-        if entity_type in self.supported_data:
-            self.name = f"The '{entity_type}' data source is forbidden"
+        if self.entity_type in self.supported_data:
+            self.name = f"The '{self.entity_type}' data source is forbidden"
             return CheckResult.FAILED
 
         return CheckResult.PASSED
