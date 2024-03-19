@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    shell = {
+      source = "scottwinkler/shell"
+      version = "1.7.10"
+    }
+  }
+}
+
 data "shell_script" "envs" {
     lifecycle_commands {
         read = <<-EOF
