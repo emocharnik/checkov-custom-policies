@@ -2,7 +2,7 @@
 
 1. Fork the repository
 2. Create a Scalr workspace from the forked repository
-3. Add a pre-init custom hook: `bash pre-init.sh`
+3. Add a pre-init custom hook: `bash before-init.sh`
 4. Trigger a run
 
 As a result, you'll see a failed Scalr run that warn about forbidden data sources/resources: 
